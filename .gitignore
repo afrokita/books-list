@@ -1,0 +1,15 @@
+# Byte-compiled and the like
+__pycache__/
+
+# Packaging
+build/
+lib/
+MANIFEST
+
+# Environments
+.env
+.venv
+env/
+venv/
+env.bak/
+venv.bak
