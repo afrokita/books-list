@@ -1,6 +1,10 @@
 import csv
 
-def write(filename):
+def write(filename, **kwargs):
+	title = kwargs.get('title', "None")
+	author = kwargs.get('author', "None")
+	year = kwargs.get('year', "None")
+	publisher = kwargs.get('publisher', "None")
 	with open(filename, 'a', newline='') as books_list:
-		books_writer = csv.writer(books_list, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-		books_writer.writerow(["I am a title"] + ["I'm an author"] + ["I am a year"] + ["I am a publisher"])
+		books_writer = csv.writer(books_list, quotechar='"', quoting=csv.QUOTE_MINIMAL)
+		books_writer.writerow([title] + [author] + [year] + [publisher])
