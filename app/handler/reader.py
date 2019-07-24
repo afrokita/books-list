@@ -7,12 +7,13 @@ def read(filename):
 		headers = ([*header_row])
 		"""
 		Necessary, since DictReader is an iterator
-		and we want to print the first row too
+		and we want to grab the first row too
 		"""
+		content = list()
 		for header in headers:
-			print(f"{header}: {header_row[header]}")
+			content.append(f"{header}: {header_row[header]}")
 		for entry in books_reader:
 			for header in headers:
-				print(f"{header}: {entry[header]}")
+				content.append(f"{header}: {entry[header]}")
 
-read('list.csv')
+	return [len(headers), content]
