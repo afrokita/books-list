@@ -16,3 +16,7 @@ venv.bak
 
 # Sphinx documentation
 docs/build/
+
+# Distribution
+*.egg-info/
+dist/

@@ -19,8 +19,8 @@ setup(
 	license='MIT License',
 	description='TODO',
 	long_description=readme,
-	url='TODO'
-	author='Afrokiti Kita, Orestis Ousoultzoglou',
+	url='TODO',
+	author='Afroditi Kita, Orestis Ousoultzoglou',
 	author_email='TODO, xlxs4@protonmail.ch',
 	classifiers=[
 		'Intended Audience :: Everyone',
