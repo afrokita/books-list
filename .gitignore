@@ -13,3 +13,6 @@ env/
 venv/
 env.bak/
 venv.bak
+
+# Sphinx documentation
+docs/build/
