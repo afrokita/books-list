@@ -1,24 +1,40 @@
-import display.cli as dcli
-import handler.reader as hreader
+import sys
+
+sys.path.append('./display')
+import colors as dclr
+
+sys.path.append('./handler')
+import reader as hreader
+
+sys.path.append('./io')
+import io_main, io_read, io_write
 
 def main():
-	dcli.init()
+        io_main.greet('Blue')
+        while True:
+            choice = io_main.get_action()
 
-	dcli.background_paint('Blue', "Greetings!")
+            if choice == "r":
+                question = "Are you sure you want to read and display the list's contents? [y/n]"
+                choice = io_main.query_yes_no(question)
 
-	csv_data = hreader.read('list.csv')
-	header_count = csv_data[0]
-	content = csv_data[1]
+                if choice == "y":
+                    io_read.read_and_display()
+                else:
+                    pass
+            else:
+                """
+                question = "Are you sure you want to write entries in the list? [y/n]"
+                choice = io_main.query_yes_no(question)
 
-	elements_printed = 0
-	for element in content:
-		dcli.foreground_paint('Yellow', element)
-		elements_printed += 1
+                if choice == "y":
+                    io_write.write()
+                else:
+                    pass
+                """
 
-		if elements_printed % header_count == 0:
-			dcli.foreground_paint('Yellow', '')
+            return
 
-	dcli.deinit()
-
+	
 if __name__ == '__main__':
 	main()
